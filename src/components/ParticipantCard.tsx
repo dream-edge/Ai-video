@@ -24,25 +24,32 @@ export default function ParticipantCard({ participant, index }: ParticipantCardP
 
         hoverTl
             .to(card, {
-                y: -10,
-                scale: 1.02,
-                boxShadow: '0 20px 40px -5px rgba(0, 0, 0, 0.3)',
-                duration: 0.3,
-                ease: 'power2.out'
+                y: -12,
+                scale: 1.03,
+                rotationY: 5,
+                rotationX: 2,
+                z: 50,
+                boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.25)',
+                duration: 0.5,
+                ease: 'expo.out'
             })
             .to(heartRef.current, {
-                scale: 1.2,
-                duration: 0.2,
+                scale: 1.3,
+                duration: 0.3,
                 yoyo: true,
-                repeat: 1
+                repeat: 1,
+                ease: 'back.out(2)'
             }, '<');
 
-        card.addEventListener('mouseenter', () => hoverTl.play());
-        card.addEventListener('mouseleave', () => hoverTl.reverse());
+        const enter = () => hoverTl.play();
+        const leave = () => hoverTl.reverse();
+
+        card.addEventListener('mouseenter', enter);
+        card.addEventListener('mouseleave', leave);
 
         return () => {
-            card.removeEventListener('mouseenter', () => hoverTl.play());
-            card.removeEventListener('mouseleave', () => hoverTl.reverse());
+            card.removeEventListener('mouseenter', enter);
+            card.removeEventListener('mouseleave', leave);
         };
     }, { scope: cardRef });
 
@@ -51,7 +58,7 @@ export default function ParticipantCard({ participant, index }: ParticipantCardP
         if (likesRef.current) {
             gsap.fromTo(likesRef.current,
                 { scale: 1.5, color: '#ec4899' },
-                { scale: 1, color: 'inherit', duration: 0.5, ease: 'back.out(1.7)' }
+                { scale: 1, color: 'inherit', duration: 0.6, ease: 'expo.out' }
             );
         }
     }, [participant.likes]);
@@ -59,7 +66,7 @@ export default function ParticipantCard({ participant, index }: ParticipantCardP
     return (
         <div
             ref={cardRef}
-            className="participant-card relative w-full bg-white border border-slate-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300"
+            className="participant-card relative w-full bg-white border border-slate-200 rounded-2xl overflow-hidden group shadow-sm"
         >
             {/* Instagram Embed Placeholder/Thumbnail */}
             <div className="relative aspect-[4/5] w-full bg-slate-100">

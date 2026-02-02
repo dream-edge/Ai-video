@@ -67,23 +67,29 @@ export default function Home() {
 
         // Hero Animations
         tl.from('.hero-text', {
-            y: 50,
+            y: 40,
             opacity: 0,
-            duration: 1,
+            duration: 1.2,
             stagger: 0.2,
-            ease: 'power3.out'
+            ease: 'expo.out'
         });
 
         // Scroll Trigger for cards section
         if (cardsRef.current) {
             ScrollTrigger.batch('.participant-card', {
-                start: 'top 85%',
+                start: 'top 90%',
                 onEnter: batch => gsap.from(batch, {
                     opacity: 0,
-                    y: 50,
-                    stagger: 0.15,
-                    duration: 0.8,
-                    ease: 'power3.out'
+                    y: 60,
+                    scale: 0.9,
+                    rotationX: 15,
+                    transformOrigin: 'top center',
+                    stagger: {
+                        each: 0.1,
+                        ease: 'power2.inOut'
+                    },
+                    duration: 1,
+                    ease: 'expo.out'
                 }),
                 once: true // animate only once
             });
