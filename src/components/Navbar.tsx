@@ -40,12 +40,14 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex items-center gap-6">
-                    <Link
-                        href="/register"
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSee2jNzt8pctpfysBS1pd05bS2gJgRz_MYkVi7vYUAc4f7dRw/viewform?usp=sf_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 text-sm font-medium bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
                     >
                         Join Competition
-                    </Link>
+                    </a>
                 </div>
             </div>
         </nav>
