@@ -29,7 +29,7 @@ export default function RegisterPage() {
                 {/* Google Form Embed */}
                 {/* Replace the URL below with your actual Google Form embed link */}
                 <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSf6uH87hX8Xm8H7B_7X6L3mN7rN_m8_7n8_T_T8n8_v_v8n8A/viewform?embedded=true"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSee2jNzt8pctpfysBS1pd05bS2gJgRz_MYkVi7vYUAc4f7dRw/viewform?embedded=true"
                     width="100%"
                     height="800"
                     frameBorder="0"
