@@ -40,15 +40,12 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex items-center gap-6">
-
-                    <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/register"
                         className="px-4 py-2 text-sm font-medium bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
                     >
                         Join Competition
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
