@@ -67,7 +67,10 @@ export default function AdminDashboard() {
                     method: 'POST',
                     body: JSON.stringify(data),
                 });
-                if (!res.ok) throw new Error('Create failed');
+                if (!res.ok) {
+                    const err = await res.json().catch(() => ({ error: 'Create failed' }));
+                    throw new Error(err.error || 'Create failed');
+                }
             }
             setIsFormOpen(false);
             fetchParticipants();
