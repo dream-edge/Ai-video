@@ -95,12 +95,12 @@ export default function Home() {
         <div ref={heroRef} className="space-y-16">
             {/* Hero Section */}
             <section className="text-center py-12 md:py-20 relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-purple-600/20 blur-[100px] -z-10 rounded-full" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-sky-400/30 blur-[130px] -z-10 rounded-full" />
 
-                <h1 className="hero-text text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-slate-900 via-purple-800 to-gray-600 bg-clip-text text-transparent mb-2">
+                <h1 className="hero-text text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-slate-900 via-sky-500 to-slate-500 bg-clip-text text-transparent mb-2">
                     AI Videography Challenge
                 </h1>
-                <h2 className="hero-text text-xl md:text-2xl font-medium text-pink-600 mb-6">
+                <h2 className="hero-text text-xl md:text-2xl font-medium text-sky-600 mb-6">
                     Theme: {settings.theme}
                 </h2>
                 <p className="hero-text text-lg text-slate-700 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
