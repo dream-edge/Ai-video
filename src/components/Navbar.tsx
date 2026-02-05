@@ -30,7 +30,7 @@ export default function Navbar() {
                         />
                         <div className="h-8 w-px bg-black/10"></div>
                         <Image
-                            src="/images/lite-logo.png"
+                            src="/logo-dark.png"
                             alt="LITE Exhibition"
                             width={100}
                             height={50}
