@@ -18,3 +18,12 @@ export interface Settings {
 
 export type NewParticipant = Omit<Participant, 'id' | 'created_at' | 'updated_at'>;
 export type UpdateParticipant = Partial<Omit<Participant, 'id' | 'created_at' | 'updated_at'>>;
+
+export interface Guideline {
+  id: number;
+  content: string;
+  display_order: number;
+  is_active: boolean;
+  created_at?: string;
+  updated_at?: string;
+}

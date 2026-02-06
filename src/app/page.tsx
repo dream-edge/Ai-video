@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { gsap, useGSAP, ScrollTrigger } from '@/lib/gsap-utils';
 import ParticipantCard from '@/components/ParticipantCard';
 import CountdownTimer from '@/components/CountdownTimer';
+import Guidelines from '@/components/Guidelines';
 import { Participant } from '@/types';
 import { supabase } from '@/lib/supabase';
 
@@ -117,6 +118,9 @@ export default function Home() {
                     <CountdownTimer targetDate={settings.target_date} />
                 </div>
             </section>
+
+            {/* Guidelines Section */}
+            <Guidelines />
 
             {/* Leaderboard Grid */}
             <section ref={cardsRef} className="min-h-[50vh]">

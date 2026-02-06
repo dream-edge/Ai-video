@@ -6,7 +6,8 @@ import { Participant, NewParticipant, UpdateParticipant } from '@/types';
 import AdminTable from '@/components/AdminTable';
 import AdminForm from '@/components/AdminForm';
 import SettingsForm from '@/components/SettingsForm';
-import { Plus, LogOut, Settings as SettingsIcon, Users } from 'lucide-react';
+import GuidelinesForm from '@/components/GuidelinesForm';
+import { Plus, LogOut, Settings as SettingsIcon, Users, FileText } from 'lucide-react';
 
 export default function AdminDashboard() {
     const router = useRouter();
@@ -14,7 +15,7 @@ export default function AdminDashboard() {
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingParticipant, setEditingParticipant] = useState<Participant | undefined>(undefined);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<'participants' | 'settings'>('participants');
+    const [activeTab, setActiveTab] = useState<'participants' | 'settings' | 'guidelines'>('participants');
 
     const fetchParticipants = async () => {
         const { data, error } = await supabase
@@ -116,6 +117,13 @@ export default function AdminDashboard() {
                     <SettingsIcon className="w-4 h-4" />
                     Site Settings
                 </button>
+                <button
+                    onClick={() => { setActiveTab('guidelines'); setIsFormOpen(false); }}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'guidelines' ? 'bg-slate-900 text-white' : 'text-slate-500 hover:text-slate-900'}`}
+                >
+                    <FileText className="w-4 h-4" />
+                    Guidelines
+                </button>
             </div>
 
             {activeTab === 'participants' ? (
@@ -145,8 +153,10 @@ export default function AdminDashboard() {
                         />
                     )}
                 </>
-            ) : (
+            ) : activeTab === 'settings' ? (
                 <SettingsForm />
+            ) : (
+                <GuidelinesForm />
             )}
         </div>
     );
