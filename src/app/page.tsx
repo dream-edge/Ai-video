@@ -4,6 +4,8 @@ import { gsap, useGSAP, ScrollTrigger } from '@/lib/gsap-utils';
 import ParticipantCard from '@/components/ParticipantCard';
 import CountdownTimer from '@/components/CountdownTimer';
 import Guidelines from '@/components/Guidelines';
+import DetailedRules from '@/components/DetailedRules';
+import FAQ from '@/components/FAQ';
 import { Participant } from '@/types';
 import { supabase } from '@/lib/supabase';
 
@@ -115,12 +117,12 @@ export default function Home() {
                 </p>
 
                 <div className="hero-text">
+                    <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
+                        Winner Announcement Day
+                    </h3>
                     <CountdownTimer targetDate={settings.target_date} />
                 </div>
             </section>
-
-            {/* Guidelines Section */}
-            <Guidelines />
 
             {/* Leaderboard Grid */}
             <section ref={cardsRef} className="min-h-[50vh]">
@@ -156,6 +158,15 @@ export default function Home() {
                     </div>
                 )}
             </section>
-        </div>
+
+            {/* Quick Guidelines Section */}
+            <Guidelines />
+
+            {/* Detailed Rules Section */}
+            <DetailedRules />
+
+            {/* FAQ Section */}
+            <FAQ />
+        </div >
     );
 }

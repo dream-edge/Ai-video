@@ -120,7 +120,7 @@ export default function Guidelines() {
 
     return (
         <section ref={sectionRef} className="py-16 relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-sky-50 via-white to-slate-50 -z-10 rounded-3xl" />
+            <div className="absolute top-0 left-0 w-full h-full bg-transparent -z-10 rounded-3xl" />
 
             <div className="max-w-5xl mx-auto px-4">
                 <div className="text-center mb-12">
@@ -169,10 +169,7 @@ export default function Guidelines() {
                     })}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-r from-sky-500 to-sky-600 rounded-2xl text-white text-center">
-                    <p className="text-lg font-semibold mb-2">Ready to participate?</p>
-                    <p className="text-sky-100">Create your AI-generated video and share it with us!</p>
-                </div>
+
             </div>
         </section>
     );
